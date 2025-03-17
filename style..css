@@ -1,0 +1,15 @@
+#ramen-menu {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.ramen-image {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
