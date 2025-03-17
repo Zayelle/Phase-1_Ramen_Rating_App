@@ -1,10 +1,34 @@
 // Sample ramen data
 const ramens = [
-    { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "images/shoyu.jpg", rating: 5, comment: "Delicious!" },
-    { id: 2, name: "Gyukotsu Ramen", restaurant: "Menya", image: "images/gyukotsu.jpg", rating: 4, comment: "Very flavorful!" },
-    { id: 3, name: "Naruto Ramen", restaurant: "Ramen-ya", image: "images/naruto.jpg" },
-    { id: 4, name: "Nirvana", restaurant: "Ramen-ya", image: "images/nirvana.jpg" }
+    {  name: "Shoyu Ramen",
+       restaurant: "Ichiran",
+       image: "images/shoyu.jpg",
+       rating: 5,
+       comment: "Delicious!" 
+    },
+
+    {  name: "Gyukotsu Ramen",
+       restaurant: "Menya",
+       image: "images/gyukotsu.jpg",
+       rating: 4, 
+       comment: "Very flavorful!" 
+    },
+
+    { name: "Naruto Ramen",
+      restaurant: "Ramen-ya", 
+      image: "images/naruto.jpg",
+      rating: 6,
+      comment:"Love the broth!"
+    },
+
+    {  name: "Nirvana",
+       restaurant: "Ramen-ya", 
+       image: "images/nirvana.jpg",
+       rating: 8,
+       comment:"Excellent!"
+    },
  ];
+
  // Function to display ramen images
 function displayRamens() {
     const ramenMenu = document.getElementById("ramen-menu");
@@ -20,10 +44,23 @@ function displayRamens() {
         img.classList.add("ramen-image"); // Optional: Add a CSS class
         img.style.width = "200px"; // Adjust size if needed
         img.style.margin = "5px";
+        img.style.cursor = "pointer";
 
-        // Append image to the ramen-menu div
+    // Add click event to display ramen details
+        img.addEventListener("click", () => handleClick(ramen));
+
+    // Append image to the ramen-menu div
         ramenMenu.appendChild(img);
     });
+}
+
+// Function to display ramen details
+function handleClick(ramen) {
+    document.getElementById("detail-image").src = ramen.image;
+    document.getElementById("detail-name").textContent = ramen.name;
+    document.getElementById("detail-restaurant").textContent = ramen.restaurant;
+    document.getElementById("detail-rating").textContent = ramen.rating;
+    document.getElementById("detail-comment").textContent = ramen.comment;
 }
 
 // Call the function when the page loads
