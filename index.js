@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", main);
+
+function main() {
+    displayRamens();
+    addSubmitListener();
+}
+
 // Sample ramen data
 const ramens = [
     {  name: "Shoyu Ramen",
@@ -83,9 +90,3 @@ function addSubmitListener() {
     });
 }
 
-// Initialize the page
-displayRamens();
-addSubmitListener();
-
-// Call the function when the page loads
-document.addEventListener("DOMContentLoaded", displayRamens);
