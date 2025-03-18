@@ -93,7 +93,7 @@ input {
     padding: 8px;
     font-size: 14px;
     border: 1px solid brown;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 button {
@@ -102,13 +102,14 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 2px;
     transition: background 0.3s;
 }
 
 button:hover {
     background-color: #8d4720;
 }
+
 
 /* Delete Button */
 #delete-ramen {
