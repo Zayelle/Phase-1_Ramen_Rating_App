@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", main);
 function main() {
     displayRamens();
     addSubmitListener();
+
+    // Automatically display details of the first ramen (if available)
+    if (ramens.length > 0) {
+        handleClick(ramens[0]);
+    }   
 }
 
 // Sample ramen data
