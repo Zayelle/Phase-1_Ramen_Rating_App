@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", main);
 
+let selectedRamen = null; // Stores currently selected ramen
 function main() {
     displayRamens();
     addSubmitListener();
+    addEditListener();
 
     // Automatically display details of the first ramen (if available)
     if (ramens.length > 0) {
@@ -73,6 +75,27 @@ function handleClick(ramen) {
     document.getElementById("detail-restaurant").textContent = ramen.restaurant;
     document.getElementById("detail-rating").textContent = ramen.rating;
     document.getElementById("detail-comment").textContent = ramen.comment;
+    
+    // Pre-fill the edit form with current rating & comment
+    document.getElementById("new-rating").value = ramen.rating;
+    document.getElementById("new-comment").value = ramen.comment;
+}
+
+function addEditListener() {
+    const editForm = document.getElementById("edit-ramen");
+    editForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page refresh
+
+        if (!selectedRamen) return; { // Ensure a ramen is selected
+            // Get updated values
+            selectedRamen.rating = document.getElementById("new-rating").value;
+            selectedRamen.comment = document.getElementById("new-comment").value;
+
+            // Update displayed details
+            document.getElementById("detail-rating").textContent = selectedRamen.rating;
+            document.getElementById("detail-comment").textContent = selectedRamen.comment;
+        }
+    });
 }
 function addSubmitListener() {
     const form = document.getElementById("new-ramen");

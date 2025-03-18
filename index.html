@@ -16,9 +16,17 @@
     <div id="ramen-detail">
         <img id="detail-image" src="" alt="Ramen Image">
         <h3 id="detail-name"></h3>
+        <h4 id="detail-restaurant"></h4>
         <p><strong>Restaurant:</strong> <span id="detail-restaurant"></span></p>
         <p><strong>Rating:</strong> <span id="detail-rating"></span></p>
         <p><strong>Comment:</strong> <span id="detail-comment"></span></p>
+        
+        <!-- Edit Rating and Comment Form -->
+      <form id="edit-ramen">
+        <input type="number" id="edit-rating" placeholder="New Rating (1-10)" min="1" max="10" required>
+        <input type="text" id="edit-comment" placeholder="New Comment" required>
+        <button type="submit">Update</button>
+      </form>  
     </div>
     </main>
     <h2>Add a New Ramen</h2>
@@ -40,7 +48,6 @@
 
        <button type="submit">Add Ramen</button>
     </form>
-
     <script src="index.js"></script>   
 </body>
 </html>
