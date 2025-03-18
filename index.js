@@ -5,6 +5,7 @@ function main() {
     displayRamens();
     addSubmitListener();
     addEditListener();
+    addDeleteListener();
 
     // Automatically display details of the first ramen (if available)
     if (ramens.length > 0) {
@@ -97,6 +98,30 @@ function addEditListener() {
         }
     });
 }
+
+function addDeleteListener() {
+    const deleteButton = document.getElementById("delete-ramen");
+    deleteButton.addEventListener("click", function () {
+        if (!selectedRamen) return; // Ensure a ramen is selected
+
+        // Remove the ramen from the menu
+        selectedRamen.imgElement.remove();
+
+        // Remove from the ramens array (optional)
+        const index = ramens.indexOf(selectedRamen);
+        if (index !== -1) {
+            ramens.splice(index, 1);
+        }
+
+        // Clear ramen details section
+        document.getElementById("detail-image").src = "";
+        document.getElementById("detail-name").textContent = "";
+        document.getElementById("detail-restaurant").textContent = "";
+        document.getElementById("detail-rating").textContent = "";
+        document.getElementById("detail-comment").textContent = "";
+    });
+}
+
 function addSubmitListener() {
     const form = document.getElementById("new-ramen");
 
