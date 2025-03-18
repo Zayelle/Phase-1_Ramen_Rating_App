@@ -62,6 +62,30 @@ function handleClick(ramen) {
     document.getElementById("detail-rating").textContent = ramen.rating;
     document.getElementById("detail-comment").textContent = ramen.comment;
 }
+function addSubmitListener() {
+    const form = document.getElementById("new-ramen");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+
+        // Gets user input values
+        const newRamen = {
+            name: document.getElementById("name").value,
+            restaurant: document.getElementById("restaurant").value,
+            image: document.getElementById("image").value,
+            rating: document.getElementById("rating").value,
+            comment: document.getElementById("comment").value
+        };
+
+        createRamenImage(newRamen); // Add new Ramen to the DOM
+
+        form.reset(); // Optional: Clear form inputs after submission
+    });
+}
+
+// Initialize the page
+displayRamens();
+addSubmitListener();
 
 // Call the function when the page loads
 document.addEventListener("DOMContentLoaded", displayRamens);
