@@ -16,7 +16,7 @@ The **Ramen Rating App** is a simple web application that allows users to view, 
 - **JavaScript** – Interactive elements and dynamic updates
 
 ##  Demo Screenshot
-![Ramen Rating App](images/image 1.png)
+![Ramen Rating App](images/image1.png)
 
 ## 📥 Installation & Setup
 1. **Clone the repository**:
